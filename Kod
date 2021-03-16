@@ -1,0 +1,18 @@
+Servo servol;
+int joyX = 0;
+int joyY = 1; 
+
+int servoVal;
+
+void setup() {
+ servol.attach(0);
+  
+}
+
+void loop() {
+  servoVal = analogRead(joyX);
+  servoVal = map(servoVal, 0, 1023, 0, 180);
+  servol.write(servoVal);
+  delay(50);
+
+}
